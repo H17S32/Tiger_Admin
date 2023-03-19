@@ -1,6 +1,6 @@
 --[[
   _______ _____ _____ ______ _____             _____  __  __ _____ _   _ 
- |__   __|_   _/ ____|  ____|  __ \      /\   |  __ \|  \/  |_   _| \ | | PL LITE
+ |__   __|_   _/ ____|  ____|  __ \      /\   |  __ \|  \/  |_   _| \ | | PL LITE Moded Vy Net Hub V2
     | |    | || |  __| |__  | |__) |    /  \  | |  | | \  / | | | |  \| |
     | |    | || | |_ |  __| |  _  /    / /\ \ | |  | | |\/| | | | | . ` |
     | |   _| || |__| | |____| | \ \   / ____ \| |__| | |  | |_| |_| |\  |
@@ -59,9 +59,9 @@ end
 do
 	--Tables
 	States = {
-		autore = true,
+		autore = false,
 		KillAura = false,
-		SilentAim= false,
+		SilentAim= true,
 		AntiPunch = false,
 		AntiTase = false,
 		FastPunch = false,
@@ -494,7 +494,7 @@ do --//Main Gui
 		TextLabel.Position = UDim2.new(0.00658436213, 0, 0, 0)-UDim2.new(0,0,1,0)
 		TextLabel.Size = UDim2.new(0, 200, 0, 32)
 		TextLabel.Font = Enum.Font.Cartoon
-		TextLabel.Text = "Tiger-admin v1.1 PL"
+		TextLabel.Text = "Net Hub Admin / Tiger Admin Source"
 		TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 		TextLabel.TextScaled = true
 		TextLabel.TextSize = 14.000
@@ -527,7 +527,7 @@ do --//Main Gui
 	end
 end
 do--//Command handler
-	Prefix = "!"
+	Prefix = ","
 	CommandsGot = 0
 	TableCommands={}
 	CommandsRawList = {}
@@ -1496,7 +1496,7 @@ do
 		local Args = GetArgs(Args)
 		keycard()
 	end,"true",true)
-	Add_Command("btools",function(Args)
+	Add_Command("btools","bt",function(Args)
 		local Args = GetArgs(Args)
 		Instance.new("HopperBin",plr.Backpack).BinType = 3
 		Instance.new("HopperBin",plr.Backpack).BinType = 4
@@ -1596,7 +1596,7 @@ do
 			until Done
 		end)
 	end,"Brings a car to your location")
-	Add_Command("crashserver",function(Args)
+	Add_Command("crashserver","disconnect",function(Args)
 		Notif("Attemping to crash the server.",5)
 		local Args = GetArgs(Args)
 		local Args = {}
@@ -1721,7 +1721,7 @@ do
 			wait()
 			workspace.CurrentCamera.CameraSubject = plr.Character:FindFirstChildOfClass("Humanoid")
 		end
-		Notif("Tiger admin is now unloaded, see you soon!")
+		Notif("Net Hub / Tiger admin Source is now unloaded, see you soon!")
 	end,"Unloads everything")
 
 	Add_Command("kill",function(Args)
@@ -1771,7 +1771,7 @@ do
 		end
 		Notif("users: "..tostring(table.concat(Concat)),5)
 	end,"Shows all tiger admin users")
-	Add_Command("loopkill",function(Args)
+	Add_Command("loopkill","lk",function(Args)
 		local Args = GetArgs(Args)
 		local r =FindPlayer(Args[2])
 		if Args[2]=="all" then
@@ -1792,7 +1792,7 @@ do
 			NotFound()
 		end
 	end,"loop kills a player","PLAYER_COMMAND")
-	Add_Command("unloopkill",function(Args)
+	Add_Command("unloopkill","unlk",function(Args)
 		local Args = GetArgs(Args)
 		local r =FindPlayer(Args[2])
 		if Args[2]=="all" then
@@ -1807,7 +1807,7 @@ do
 			NotFound()
 		end
 	end,"unloop kills a player","PLAYER_COMMAND")
-	Add_Command("whitelist",function(Args)
+	Add_Command("whitelist","wl",function(Args)
 		local Args = GetArgs(Args)
 		local r =FindPlayer(Args[2])
 		if r then
@@ -1817,7 +1817,7 @@ do
 			NotFound()
 		end
 	end,"Cant harm that player with commands","PLAYER_COMMAND")
-	Add_Command("unwhitelist",function(Args)
+	Add_Command("unwhitelist","unwl",function(Args)
 		local Args = GetArgs(Args)
 		local r =FindPlayer(Args[2])
 		if r then
@@ -1827,7 +1827,7 @@ do
 			NotFound()
 		end
 	end,"unwhitelists a player","PLAYER_COMMAND")
-	Add_Command("admin",function(Args)
+	Add_Command("admin","rank",function(Args)
 		local Args = GetArgs(Args)
 		local r =FindPlayer(Args[2])
 		if r then
@@ -1931,7 +1931,7 @@ do
 			Notif("You need to hold the tool you want to mod!")
 		end
 	end,"makes your gun have inf ammo")
-	Add_Command("unadmin",function(Args)
+	Add_Command("unadmin","unrank",function(Args)
 		local Args = GetArgs(Args)
 		local r = Args[2]
 		if States.Admined and r then
@@ -1941,7 +1941,7 @@ do
 			NotFound()
 		end
 	end,"Admins a player","PLAYER_COMMAND")
-	Add_Command("bring",function(Args)
+	Add_Command("bring","get",function(Args)
 		local Args = GetArgs(Args)
 		if Args[2] == "all" then
 			local pos = getpos()
@@ -1981,21 +1981,21 @@ do
 			end
 		end
 	end,"Brings a player to the void","PLAYER_COMMAND")
-	Add_Command("jump",function(Args)
+	Add_Command("jump","jp",function(Args)
 		local Args = GetArgs(Args)
 		local r = Args[2]
 		if r and tonumber(r) then
 			plr.Character:FindFirstChildOfClass("Humanoid").JumpPower = r
 		end
 	end,"jumppower what else do you think","NUMBER_COMMAND")
-	Add_Command("speed",function(Args)
+	Add_Command("speed","sd",function(Args)
 		local Args = GetArgs(Args)
 		local r = Args[2]
 		if r and tonumber(r) then
 			plr.Character:FindFirstChildOfClass("Humanoid").WalkSpeed = r
 		end
 	end,"Speed what else do you think","NUMBER_COMMAND")
-	Add_Command("goto",function(Args)
+	Add_Command("goto","to","go",function(Args)
 		local Args = GetArgs(Args)
 		local r = FindPlayer(Args[2])
 		if r then
@@ -2159,7 +2159,7 @@ do
 		local Args = GetArgs(Args)
 		Toggle(Args[2],"autore")
 	end,"",true)
-	Add_Command("antibring",function(Args)
+	Add_Command("antibring","antiget",function(Args)
 		local Args = GetArgs(Args)
 		Toggle(Args[2],"Antibring")
 	end,"No exploiter can bring you","TOGGLE_COMMAND")
@@ -3298,7 +3298,7 @@ function AdminChatted(Text,Speaker)
 			NotFound()
 		end
 	end
-	if commandPLAYER("goto") then
+	if commandPLAYER("goto", "to", "go") then
 		local r = FindPlayer(Arg2_P)
 		if r then
 			if not Speaker.Character then
@@ -3344,3 +3344,7 @@ refresh()
 plr.PlayerGui.Home.fadeFrame.Visible = false--//black bar
 CmdBarFrame:TweenPosition(UDim2.new(0.5, 0, 0.899999998, 0)-UDim2.new(0,0,.05,0),"Out","Back",.5)
 Notif("Loaded! type !noinvite to disable discord invite",3)
+
+wait("3")
+
+Notif("Wecome to Net Hub Admin / Tiger Admin Source",5)
