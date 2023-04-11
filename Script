@@ -1,6 +1,6 @@
 --[[
   _______ _____ _____ ______ _____             _____  __  __ _____ _   _ 
- |__   __|_   _/ ____|  ____|  __ \      /\   |  __ \|  \/  |_   _| \ | | PL LITE
+ |__   __|_   _/ ____|  ____|  __ \      /\   |  __ \|  \/  |_   _| \ | | PL LITE / modified by Net Hub
     | |    | || |  __| |__  | |__) |    /  \  | |  | | \  / | | | |  \| |
     | |    | || | |_ |  __| |  _  /    / /\ \ | |  | | |\/| | | | | . ` |
     | |   _| || |__| | |____| | \ \   / ____ \| |__| | |  | |_| |_| |\  |
@@ -59,9 +59,9 @@ end
 do
 	--Tables
 	States = {
-		autore = true,
+		autore = false,
 		KillAura = false,
-		SilentAim= false,
+		SilentAim= true,
 		AntiPunch = false,
 		AntiTase = false,
 		FastPunch = false,
