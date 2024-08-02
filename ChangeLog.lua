@@ -1,1 +1,1 @@
-The script Prizzlife logs your information!
+Phone supported UI
