@@ -1,1 +1,1 @@
-Added Phone supported UI, If you're using Tiger admin v3.08 or older its very outdated! get the new one from discord server! (Newest is v3.1)
+(V3.1 IS NEWEST IF YOU GOT OLDER ITS VERY OUTDATED!) +Added !breakdoors <ON/OFF>, +Added !breakcarspawner <ON/OFF>, +Added !breakserver <ON/OFF>, +Added !breakshields <ON/OFF>, Fixed !kill <PLAYER> giving warnings while being a guard
