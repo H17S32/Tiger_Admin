@@ -1,1 +1,1 @@
-(V3.1 IS NEWEST IF YOU GOT OLDER ITS VERY OUTDATED!) +Added !breakdoors <ON/OFF>, +Added !breakcarspawner <ON/OFF>, +Added !breakserver <ON/OFF>, +Added !breakshields <ON/OFF>, Fixed !kill <PLAYER> giving warnings while being a guard
+(V3.1 IS NEWEST IF YOU GOT OLDER ITS VERY OUTDATED!) Added !killaura <PLAYER> with on/off feature, Added !minigun, Fixed !supergod, Added !fly, Added !unfly
